@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/messagesWeb">
+
+        <Resource name="jdbc/messages" 
+                  auth="Container" 
+                  type="javax.sql.DataSource"
+                  maxTotal="10" 
+                  maxIdle="3" 
+                  maxWaitMillis="10000"
+                  driverClassName="org.sqlite.JDBC" 
+                  url="jdbc:sqlite:/home/thomas/messages/messages" 
+    />
+
+
+</Context>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="style/style.css"/>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Hello World!</h1>
+            <div id="list">
+            
+            </div>   
+            
+        </div>
+
+        <script>
+            
+            async function fetchMessages(){
+                let res = await fetch("http://localhost:8080/messagesWeb/messagesCtrler");
+                let data = await res.json();
+                return data;
+            }
+            
+            fetchMessages().then((messages) => {
+               for(let message of messages){
+                   list.innerHTML += `<div class="message"><p>${message.author.pseudo} | ${message.sent_date}</p>
+                                      <p>${message.content}</p></div>`;
+               } 
+            });
+            
+            
+        </script>
+    </body>
+    
+    
+</html>
